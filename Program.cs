@@ -25,13 +25,52 @@ namespace NumbersInCSharp
             Console.WriteLine($"quotient: {d}");
             Console.WriteLine($"remainder: {e}");
         }
-        static void Main (string[] args)
+        static void WorkingWithOverflow ()
         {
-            WorkingWithIntegers();
-            WorkingWithSymbols();
             int max = int.MaxValue;
             int min = int.MinValue;
             Console.WriteLine($"The range of integers is {min} to {max}");
+            int what = max+3;
+            Console.WriteLine($"This is what happens during an int overflow: {what}");
+        }
+        static void WorkingWithDoubles () 
+        {
+            double e = 19;
+            double f = 23;
+            double g = 8;
+            double h = (e + f) / g;
+            Console.WriteLine(h);             
+            double max = double.MaxValue;
+            double min = double.MinValue;
+            Console.WriteLine($"The range of double is {min} to {max}");
+        }
+        static void WorkingWithDecimals()
+        {
+            decimal min = decimal.MinValue;
+            decimal max = decimal.MaxValue;
+            Console.WriteLine($"The range of the decimal type is {min} to {max}");
+            double a = 1.0;
+            double b = 3.0;
+            Console.WriteLine(a / b);
+
+            decimal c = 1.0M;
+            decimal d = 3.0M;
+            Console.WriteLine(c / d);
+        }
+        static void FindingArea()
+        {
+            double r = 2.5;
+            double area = Math.PI * r * r;
+            Console.WriteLine(area);
+        }
+        static void Main (string[] args)
+        {
+            // WorkingWithIntegers();
+            // WorkingWithSymbols();
+            // WorkingWithOverflow();
+            // WorkingWithDoubles();
+            // WorkingWithDecimals();
+            // FindingArea();
         }
     }
 }
